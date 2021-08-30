@@ -106,14 +106,14 @@ async def pasty(client, message):
             m_list = open(file, "r").read()
             message_s = m_list
             os.remove(file)
-        elif message.reply_to_message.text:
+        else:
             message_s = message.reply_to_message.text
-    
+
     ext = "py"
     x = await p_paste(message_s, ext)
     p_link = x["url"]
     p_raw = x["raw"]
-    
+
     pasted = f"**Pasted to Pasty**\n**Link:** [Pasty]({p_link})\n**Raw Link:** [Raw]({p_raw})"
     await pablo.edit(pasted, disable_web_page_preview=True)
 
@@ -136,14 +136,14 @@ async def space_bin(client, message):
             m_list = open(file, "r").read()
             message_s = m_list
             os.remove(file)
-        elif message.reply_to_message.text:
+        else:
             message_s = message.reply_to_message.text
-    
+
     ext = "py"
     x = await s_paste(message_s, ext)
     s_link = x["url"]
     s_raw = x["raw"]
-    
+
     pasted = f"**Pasted to Spacebin**\n**Link:** [Spacebin]({s_link})\n**Raw Link:** [Raw]({s_raw})"
     await pablo.edit(pasted, disable_web_page_preview=True)
 
@@ -165,14 +165,14 @@ async def cat_bin(client, message):
             m_list = open(file, "r").read()
             message_s = m_list
             os.remove(file)
-        elif message.reply_to_message.text:
+        else:
             message_s = message.reply_to_message.text
-    
+
     ext = "py"
     x = await c_paste(message_s, ext)
     c_link = x["url"]
     c_raw = x["raw"]
-    
+
     pasted = f"**Pasted to Catbin**\n**Link:** [Catbin]({c_link})\n**Raw Link:** [Raw]({c_raw})"
     await pablo.edit(pasted, disable_web_page_preview=True)
 
@@ -194,17 +194,17 @@ async def haste_bin(client, message):
             m_list = open(file, "r").read()
             message_s = m_list
             os.remove(file)
-        elif message.reply_to_message.text:
+        else:
             message_s = message.reply_to_message.text
-    
+
     link = "https://hastebin.com/documents"
 
     async with aiohttp.ClientSession() as session:
         req = await session.post(link, data=message_s)
         resp = await req.json()
-    key = resp.get("key")            
+    key = resp.get("key")
     url = f"https://hastebin.com/{key}"
     raw = f"https://hastebin.com/raw/{key}"
-    
+
     output = f"**Pasted to Hastebin**\n**Link:** [Hastebin]({url})\n**Raw Link:** [Raw]({raw})"
     await pablo.edit(output, disable_web_page_preview=True)
