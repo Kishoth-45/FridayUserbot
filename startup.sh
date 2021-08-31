@@ -10,7 +10,7 @@ nowtime=$(date)
 echo "
 FridayUserBot
 
-(C) @FridayOT
+(C) @GODOFANJELSUPPORT
 Powered By @DevsExpo.
 Time : $nowtime
 "
