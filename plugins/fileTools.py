@@ -147,11 +147,11 @@ async def chnnlpdf(client, message):
         await pablo.edit(engine.get_string("IMAGE_NOT_FOUND").format("This Chat"))
         shutil.rmtree(dirz)
         return
-    with open("imagetopdf@fridayot.pdf", "wb") as f:
+    with open("imagetopdf@GODOFANJELSUPPORT.pdf", "wb") as f:
         f.write(img2pdf.convert(images_path))
     capt = f"**CONVERTED** \n**Total Images :** `{len(images_path)}` \n**Channel / Group :** `{chnnl}`"
-    await client.send_document(message.chat.id, "imagetopdf@fridayot.pdf", caption=capt)
-    os.remove("imagetopdf@fridayot.pdf")
+    await client.send_document(message.chat.id, "imagetopdf@GODOFANJELSUPPORT.pdf", caption=capt)
+    os.remove("imagetopdf@GODOFANJELSUPPORT.pdf")
     shutil.rmtree(dirz)
     await pablo.delete()
 
