@@ -852,7 +852,7 @@ async def slogo(client, message):
     draw.text(
         (x, y), text, font=font, fill="white", stroke_width=60, stroke_fill="black"
     )
-    fname2 = "LogoBy@FRIDAYOT.png"
+    fname2 = "LogoBy@GODOFANJELSUPPORT.png"
     img.save(fname2, "png")
     await client.send_chat_action(message.chat.id, "cancel")
     if message.reply_to_message:
